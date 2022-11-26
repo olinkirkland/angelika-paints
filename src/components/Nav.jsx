@@ -21,11 +21,11 @@ export default function Nav() {
     };
   }, []);
 
-  // Hide of mobile nav when window is resized
   useEffect(() => {
-    document.querySelector('.nav-content > ul').style.display = 'none';
+    document.querySelector('.nav-content > ul').style.transition = 'none';
     const timeout = setTimeout(() => {
-      document.querySelector('.nav-content > ul').style.display = 'block';
+      document.querySelector('.nav-content > ul').style.transition =
+        'transform 0.3s';
     }, 500);
 
     return () => {
