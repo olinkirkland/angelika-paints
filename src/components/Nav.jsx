@@ -7,6 +7,31 @@ import Alert from './Alert';
 export default function Nav() {
   const [language, setLanguage] = useState(currentLanguage);
   const [showMobileNav, setShowMobileNav] = useState(false);
+  const [size, setSize] = useState(window.innerWidth);
+
+  useEffect(() => {
+    window.addEventListener('resize', () => {
+      setSize(window.innerWidth);
+    });
+
+    return () => {
+      window.removeEventListener('resize', () => {
+        setSize(window.innerWidth);
+      });
+    };
+  }, []);
+
+  // Hide of mobile nav when window is resized
+  useEffect(() => {
+    document.querySelector('.nav-content > ul').style.display = 'none';
+    const timeout = setTimeout(() => {
+      document.querySelector('.nav-content > ul').style.display = 'block';
+    }, 500);
+
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, [size]);
 
   const onClickHamburger = () => {
     setShowMobileNav(!showMobileNav);
