@@ -61,6 +61,20 @@ export default function Nav() {
     siblingEl.classList.toggle('dropdown--open');
   };
 
+  // If any <a> tags are clicked, close the mobile nav, and close any open dropdowns
+  useEffect(() => {
+    const links = document.querySelectorAll('.nav-content a');
+    links.forEach((link) => {
+      link.addEventListener('click', () => {
+        setShowMobileNav(false);
+        const dropdowns = document.querySelectorAll('.dropdown--open');
+        dropdowns.forEach((dropdown) => {
+          dropdown.classList.remove('dropdown--open');
+        });
+      });
+    });
+  }, []);
+
   return (
     <nav>
       <Alert
@@ -80,52 +94,59 @@ export default function Nav() {
         )}
         <ul className={showMobileNav ? 'show-mobile-nav' : ''}>
           <li>
-            <Link to="/link">
-              <span>Studio</span>
-            </Link>
-          </li>
-          <li>
             <button className="link" onClick={openDropdown}>
               <i className="fas fa-chevron-down sm" />
-              <span>Workshops</span>
+              <span>{text('nav-studio')}</span>
             </button>
             <ul className="dropdown">
               <li>
-                <Link to="/link">Lorem ipsum dolor sit amet</Link>
+                <Link to="/link">{text('nav-studio-about')}</Link>
               </li>
               <li>
-                <Link to="/link">Quia natus</Link>
-              </li>
-              <li>
-                <Link to="/link">Consectetur adipisicing elit</Link>
+                <Link to="/link">{text('nav-studio-tour')}</Link>
               </li>
             </ul>
           </li>
+
           <li>
             <button className="link" onClick={openDropdown}>
               <i className="fas fa-chevron-down sm" />
-              <span>Collections</span>
+              <span>{text('nav-collections')}</span>
             </button>
             <ul className="dropdown">
               <li>
-                <Link to="/link">Quia natus</Link>
+                <Link to="/link">{text('nav-collections-ideas')}</Link>
               </li>
               <li>
-                <Link to="/link">Consectetur adipisicing elit</Link>
+                <Link to="/link">{text('nav-collections-nature')}</Link>
               </li>
               <li>
-                <Link to="/link">Lorem ipsum dolor sit amet</Link>
+                <Link to="/link">{text('nav-collections-tales')}</Link>
               </li>
             </ul>
           </li>
+
           <li>
-            <Link to="/link">
-              <span>Gallery</span>
-            </Link>
+            <button className="link" onClick={openDropdown}>
+              <i className="fas fa-chevron-down sm" />
+              <span>{text('nav-lessons')}</span>
+            </button>
+            <ul className="dropdown">
+              <li>
+                <Link to="/link">{text('nav-lessons-trial')}</Link>
+              </li>
+              <li>
+                <Link to="/link">{text('nav-lessons-workshops')}</Link>
+              </li>
+              <li>
+                <Link to="/link">{text('nav-lessons-private-lessons')}</Link>
+              </li>
+            </ul>
           </li>
+
           <li className="cta">
             <Link to="/link">
-              <span>Prints &amp; Commissions</span>
+              <span>{text('nav-prints-and-commissions')}</span>
             </Link>
           </li>
           <li className="language-selector">

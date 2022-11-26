@@ -1,7 +1,25 @@
 {
+  "nav-studio": "Studio",
+  "nav-studio-about": "About Angelika's studio",
+  "nav-studio-tour": "Private studio tour",
+  "nav-collections": "Collections",
+  "nav-collections-ideas": "Ideas",
+  "nav-collections-nature": "Nature",
+  "nav-collections-tales": "Tales",
+  "nav-lessons": "Workshops & Lessons",
+  "nav-lessons-trial": "Trial lesson",
+  "nav-lessons-workshops": "Workshops",
+  "nav-lessons-private-lessons": "Private Lessons",
+  "nav-prints-and-commissions": "Prints & Commissions",
+
   "alert-promotion-schnupperstunde": "Free trial lesson - book now! *",
   "title": "Angelika Paints",
   "hero-subtitle": "Angelika Schäfer is an experienced artist and educator in Esslingen, Germany offering original and commissioned artwork, private lessons, and creative workshops.",
   "hero-cta-1": "Explore the Artwork",
-  "hero-cta-2": "Order a Commission"
+  "hero-cta-2": "Order a Commission",
+
+  "home-about-title": "",
+  "home-about-content-1": "",
+  "home-about-content-2": "",
+  "home-about-content-3": ""
 }

@@ -18,7 +18,10 @@ export function setAppLanguage(value) {
 
 export function text(key, ...args) {
   if (!translations) initializeAppLanguage();
-  const value = translations[key] ? translations[key] : `[${key}]`;
+  const value =
+    translations.hasOwnProperty(key) && translations[key].length > 0
+      ? translations[key]
+      : `[${key}]`;
   if (!translations[key])
     console.warn(`Missing ${currentLanguage} translation for key: ${key}`);
   // Replace all instances of '%%' in the string with the passed in arguments
