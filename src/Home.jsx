@@ -4,7 +4,7 @@ import { text } from './locale/locale';
 export default function Home() {
   const carouselData = [
     {
-      img: 'https://olinkirk.land/angelika-paints/assets/images/hero/1.png',
+      img: 'https://olinkirk.land/angelika-paints/assets/images/hero/1.webp',
       href: 'http://www.google.com',
       openInNewTab: true,
       title: 'Slide 1',
@@ -12,7 +12,7 @@ export default function Home() {
       ctas: [{ text: 'Click here', primary: true }]
     },
     {
-      img: 'https://olinkirk.land/angelika-paints/assets/images/hero/2.png',
+      img: 'https://olinkirk.land/angelika-paints/assets/images/hero/2.webp',
       href: 'http://www.google.com',
       openInNewTab: true,
       title: 'Slide 2',
@@ -23,7 +23,7 @@ export default function Home() {
       ]
     },
     {
-      img: 'https://olinkirk.land/angelika-paints/assets/images/hero/3.png',
+      img: 'https://olinkirk.land/angelika-paints/assets/images/hero/3.webp',
       href: 'http://www.google.com',
       openInNewTab: true,
       title: 'Slide 3',
