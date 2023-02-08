@@ -46,31 +46,18 @@ export default function Nav() {
     }
   }, [showMobileNav]);
 
-  const openDropdown = (e) => {
-    const targetEl = e.target.closest('button');
-    const siblingEl = targetEl.nextElementSibling;
-
-    // Close all dropdowns except for siblingEl
-    const dropdowns = document.querySelectorAll('.dropdown--open');
-    dropdowns.forEach((dropdown) => {
-      if (dropdown !== siblingEl) {
-        dropdown.classList.remove('dropdown--open');
-      }
-    });
-
-    siblingEl.classList.toggle('dropdown--open');
-  };
-
-  // If any <a> tags are clicked, close the mobile nav, and close any open dropdowns
   useEffect(() => {
-    const links = document.querySelectorAll('.nav-content a');
-    links.forEach((link) => {
-      link.addEventListener('click', () => {
-        setShowMobileNav(false);
-        const dropdowns = document.querySelectorAll('.dropdown--open');
-        dropdowns.forEach((dropdown) => {
+    document.addEventListener('click', (e) => {
+      // If a dropdown is open and the click is outside of the dropdown, close it
+      if (e.target.closest('.nav-content > ul')) {
+        return;
+      }
+
+      const dropdowns = document.querySelectorAll('.dropdown--open');
+      dropdowns.forEach((dropdown) => {
+        if (!dropdown.contains(e.target)) {
           dropdown.classList.remove('dropdown--open');
-        });
+        }
       });
     });
   }, []);
@@ -78,7 +65,7 @@ export default function Nav() {
   return (
     <nav>
       <Alert
-        text={text('alert-promotion-schnupperstunde')}
+        text={text('promotion-banner')}
         icon="gift"
         onClick={() => {
           console.log('clicked');
@@ -96,14 +83,14 @@ export default function Nav() {
           <li>
             <button className="link" onClick={openDropdown}>
               <i className="fas fa-chevron-down sm" />
-              <span>{text('nav-studio')}</span>
+              <span>{text('nav.studio.label')}</span>
             </button>
             <ul className="dropdown">
               <li>
-                <Link to="/link">{text('nav-studio-about')}</Link>
+                <Link to="/link">{text('nav.studio.about')}</Link>
               </li>
               <li>
-                <Link to="/link">{text('nav-studio-tour')}</Link>
+                <Link to="/link">{text('nav.studio.tour')}</Link>
               </li>
             </ul>
           </li>
@@ -111,17 +98,17 @@ export default function Nav() {
           <li>
             <button className="link" onClick={openDropdown}>
               <i className="fas fa-chevron-down sm" />
-              <span>{text('nav-collections')}</span>
+              <span>{text('nav.collections.label')}</span>
             </button>
             <ul className="dropdown">
               <li>
-                <Link to="/link">{text('nav-collections-ideas')}</Link>
+                <Link to="/link">{text('nav.collections.ideas')}</Link>
               </li>
               <li>
-                <Link to="/link">{text('nav-collections-nature')}</Link>
+                <Link to="/link">{text('nav.collections.nature')}</Link>
               </li>
               <li>
-                <Link to="/link">{text('nav-collections-tales')}</Link>
+                <Link to="/link">{text('nav.collections.tales')}</Link>
               </li>
             </ul>
           </li>
@@ -129,24 +116,24 @@ export default function Nav() {
           <li>
             <button className="link" onClick={openDropdown}>
               <i className="fas fa-chevron-down sm" />
-              <span>{text('nav-lessons')}</span>
+              <span>{text('nav.lessons.label')}</span>
             </button>
             <ul className="dropdown">
               <li>
-                <Link to="/link">{text('nav-lessons-trial')}</Link>
+                <Link to="/link">{text('nav.lessons.trial')}</Link>
               </li>
               <li>
-                <Link to="/link">{text('nav-lessons-workshops')}</Link>
+                <Link to="/link">{text('nav.lessons.workshops')}</Link>
               </li>
               <li>
-                <Link to="/link">{text('nav-lessons-private-lessons')}</Link>
+                <Link to="/link">{text('nav.lessons.private-lessons')}</Link>
               </li>
             </ul>
           </li>
 
           <li className="cta">
             <Link to="/link">
-              <span>{text('nav-prints-and-commissions')}</span>
+              <span>{text('nav.prints-and-commissions')}</span>
             </Link>
           </li>
           <li className="language-selector">
@@ -187,4 +174,19 @@ export default function Nav() {
       </div>
     </nav>
   );
+}
+
+function openDropdown(e) {
+  const targetEl = e.target.closest('button');
+  const siblingEl = targetEl.nextElementSibling;
+
+  // Close all dropdowns except for siblingEl
+  const dropdowns = document.querySelectorAll('.dropdown--open');
+  dropdowns.forEach((dropdown) => {
+    if (dropdown !== siblingEl) {
+      dropdown.classList.remove('dropdown--open');
+    }
+  });
+
+  siblingEl.classList.toggle('dropdown--open');
 }

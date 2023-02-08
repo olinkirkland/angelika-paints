@@ -12,7 +12,7 @@ export default function App() {
       basename={
         ['localhost', '127.0.0.1'].includes(window.location.hostname)
           ? '/'
-          : '/angelika-paints/'
+          : '/angelika-paints'
       }
     >
       <div>

@@ -30,6 +30,10 @@ body {
   &.no-scroll {
     overflow: hidden;
   }
+
+  > div {
+    overflow: hidden;
+  }
 }
 
 .flex {
@@ -54,6 +58,7 @@ h1.logo {
   color: $color-secondary;
   font-family: 'Yeseva One', serif;
   font-weight: bold;
+  white-space: nowrap;
 }
 
 .button-bar {
@@ -265,7 +270,6 @@ button {
   border: none;
   font-size: 1.6rem;
   letter-spacing: 2px;
-  font-weight: thin;
   text-transform: uppercase;
   cursor: pointer;
   position: relative;
@@ -383,6 +387,11 @@ footer {
     gap: 2rem;
     margin-bottom: 2rem;
 
+    a {
+      color: $color-background;
+      text-decoration: none;
+    }
+
     hr {
       margin-bottom: 1.8rem;
     }
@@ -412,7 +421,7 @@ footer {
         li {
           display: flex;
           align-items: center;
-          gap: 0.6rem;
+          gap: 1.2rem;
           font-size: 1.4rem;
         }
       }
@@ -485,6 +494,9 @@ footer {
   margin-bottom: -2rem;
   border: 1px solid $color-text;
   box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.4);
+
+  display: flex;
+  flex-direction: column;
 
   h2 {
     margin-bottom: 1rem;
@@ -635,6 +647,14 @@ footer {
           font-family: 'Yeseva One', serif;
           font-weight: bold;
           font-size: 4rem;
+          text-align: center;
+          margin: 0 2rem;
+        }
+
+        p {
+          font-size: 1.6rem;
+          text-align: center;
+          margin: 0 4rem;
         }
 
         * {
