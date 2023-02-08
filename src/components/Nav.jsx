@@ -87,10 +87,14 @@ export default function Nav() {
             </button>
             <ul className="dropdown">
               <li>
-                <Link to="/link">{text('nav.studio.about')}</Link>
+                <Link to="/about" onMouseDown={closeDropdown}>
+                  {text('nav.studio.about')}
+                </Link>
               </li>
               <li>
-                <Link to="/link">{text('nav.studio.tour')}</Link>
+                <Link to="/tour" onMouseDown={closeDropdown}>
+                  {text('nav.studio.tour')}
+                </Link>
               </li>
             </ul>
           </li>
@@ -102,13 +106,19 @@ export default function Nav() {
             </button>
             <ul className="dropdown">
               <li>
-                <Link to="/link">{text('nav.collections.ideas')}</Link>
+                <Link to="/collections/ideas" onMouseDown={closeDropdown}>
+                  {text('nav.collections.ideas')}
+                </Link>
               </li>
               <li>
-                <Link to="/link">{text('nav.collections.nature')}</Link>
+                <Link to="/collections/nature" onMouseDown={closeDropdown}>
+                  {text('nav.collections.nature')}
+                </Link>
               </li>
               <li>
-                <Link to="/link">{text('nav.collections.tales')}</Link>
+                <Link to="/collections/tales" onMouseDown={closeDropdown}>
+                  {text('nav.collections.tales')}
+                </Link>
               </li>
             </ul>
           </li>
@@ -120,13 +130,19 @@ export default function Nav() {
             </button>
             <ul className="dropdown">
               <li>
-                <Link to="/link">{text('nav.lessons.trial')}</Link>
+                <Link to="/lessons#trial" onMouseDown={closeDropdown}>
+                  {text('nav.lessons.trial')}
+                </Link>
               </li>
               <li>
-                <Link to="/link">{text('nav.lessons.workshops')}</Link>
+                <Link to="/lessons#workshops" onMouseDown={closeDropdown}>
+                  {text('nav.lessons.workshops')}
+                </Link>
               </li>
               <li>
-                <Link to="/link">{text('nav.lessons.private-lessons')}</Link>
+                <Link to="/lessons#private-lessons" onMouseDown={closeDropdown}>
+                  {text('nav.lessons.private-lessons')}
+                </Link>
               </li>
             </ul>
           </li>
@@ -189,4 +205,12 @@ function openDropdown(e) {
   });
 
   siblingEl.classList.toggle('dropdown--open');
+}
+
+function closeDropdown({ target }) {
+  const listEl = target.closest('ul');
+  if (!listEl) return;
+  setTimeout(() => {
+    listEl.classList.remove('dropdown--open');
+  }, 200);
 }

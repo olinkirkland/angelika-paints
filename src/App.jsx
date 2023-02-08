@@ -11,8 +11,8 @@ export default function App() {
     <Router
       basename={
         ['localhost', '127.0.0.1'].includes(window.location.hostname)
-          ? '/'
-          : '/angelika-paints'
+          ? '/angelika-paints' // local (localhost:5173/angelika-paints)
+          : '/angelika-paints' // production (olinkirk.land/angelika-paints)
       }
     >
       <div>
@@ -20,7 +20,6 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/users" element={<Users />} />
         </Routes>
         <Footer />
       </div>
@@ -30,8 +29,4 @@ export default function App() {
 
 function About() {
   return <h2>About</h2>;
-}
-
-function Users() {
-  return <h2>Users</h2>;
 }

@@ -39,7 +39,7 @@ export default function Home() {
       </div>
 
       <section>
-        <span>{text('home.geschichten.overview')}</span>
+        <span>{text('home.stories.overview')}</span>
       </section>
 
       <section>
