@@ -5,7 +5,6 @@ import { currentLanguage, setAppLanguage, text } from '../locale/locale';
 import Alert from './Alert';
 
 export default function Nav() {
-  const [language, setLanguage] = useState(currentLanguage);
   const [showMobileNav, setShowMobileNav] = useState(false);
   const [size, setSize] = useState(window.innerWidth);
 
