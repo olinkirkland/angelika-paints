@@ -8,6 +8,11 @@ export default function Gallery({ entries }) {
         {entries.map((entry, index) => (
           <li className="gallery__item" key={index}>
             <img
+              class="gallery__image"
+              loading="lazy"
+              onLoad={({ target }) => {
+                target.classList.add('gallery__image--loaded');
+              }}
               className="gallery__image"
               src={getPagesUrl() + '/assets/images/gallery/' + entry.url}
               alt={getPagesUrl() + '/assets/images/gallery/' + entry.url}
