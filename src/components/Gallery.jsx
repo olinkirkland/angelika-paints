@@ -1,4 +1,5 @@
 import React from 'react';
+import { getPagesUrl } from '../Util';
 
 export default function Gallery({ entries }) {
   return (
@@ -8,8 +9,8 @@ export default function Gallery({ entries }) {
           <li className="gallery__item" key={index}>
             <img
               className="gallery__image"
-              src={'/assets/images/gallery/' + entry.url}
-              alt={'/assets/images/gallery/' + entry.url}
+              src={getPagesUrl() + '/assets/images/gallery/' + entry.url}
+              alt={getPagesUrl() + '/assets/images/gallery/' + entry.url}
             />
           </li>
         ))}
