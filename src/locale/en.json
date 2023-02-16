@@ -62,6 +62,12 @@
     "name-placeholder": "Your name",
     "button": "Subscribe"
   },
+
+  "page-not-found": {
+    "title": "Oops! Page not found.",
+    "description": "The page you are looking for does not exist."
+  },
+
   "footer": {
     "follow": "Follow me on social media!",
     "about": {

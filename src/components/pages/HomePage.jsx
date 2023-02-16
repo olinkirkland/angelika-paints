@@ -1,5 +1,5 @@
-import Carousel from './components/Carousel';
-import { text } from './locale/locale';
+import Carousel from '../Carousel';
+import { text } from '../../locale/locale';
 
 export default function Home() {
   const carouselData = [

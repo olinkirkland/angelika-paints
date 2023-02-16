@@ -734,3 +734,33 @@ footer {
 html.touch *:hover {
   all: unset !important;
 }
+
+.page-not-found {
+  margin: 4rem;
+  text-align: center;
+}
+
+.page {
+  h1 {
+    padding: 2rem 0;
+    text-align: center;
+  }
+}
+
+.gallery {
+  ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 0.1rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      aspect-ratio: 1/1;
+    }
+  }
+}

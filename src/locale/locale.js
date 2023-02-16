@@ -24,7 +24,7 @@ export function text(path, ...args) {
   } catch (e) {}
 
   if (!value) {
-    console.warn(`No translation found for path '${path}'`);
+    console.log(`No translation found for path '${path}'`);
     return `[${path}]`;
   }
 

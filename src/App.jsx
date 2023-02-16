@@ -2,7 +2,15 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Footer from './components/Footer';
 import Nav from './components/Nav';
-import Home from './Home';
+import AboutPage from './components/pages/AboutPage';
+import HomePage from './components/pages/HomePage';
+import IdeasPage from './components/pages/IdeasPage';
+import LessonsPage from './components/pages/LessonsPage';
+import NaturePage from './components/pages/NaturePage';
+import PageNotFound from './components/pages/NotFoundPage';
+import PrintsAndCommissionsPage from './components/pages/PrintsAndCommissionsPage';
+import TalesPage from './components/pages/TalesPage';
+import TourPage from './components/pages/TourPage';
 
 export default function App() {
   const [data, setData] = React.useState([]);
@@ -18,15 +26,21 @@ export default function App() {
       <div>
         <Nav />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="*" element={<PageNotFound />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/tour" element={<TourPage />} />
+          <Route path="/collections/ideas" element={<IdeasPage />} />
+          <Route path="/collections/nature" element={<NaturePage />} />
+          <Route path="/collections/tales" element={<TalesPage />} />
+          <Route path="/lessons" element={<LessonsPage />} />
+          <Route
+            path="/prints-and-commissions"
+            element={<PrintsAndCommissionsPage />}
+          />
         </Routes>
         <Footer />
       </div>
     </Router>
   );
-}
-
-function About() {
-  return <h2>About</h2>;
 }
