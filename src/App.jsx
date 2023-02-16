@@ -20,7 +20,7 @@ export default function App() {
       basename={
         ['localhost', '127.0.0.1'].includes(window.location.hostname)
           ? '/angelika-paints' // local (localhost:5173/angelika-paints)
-          : '/angelika-paints' // production (olinkirk.land/angelika-paints)
+          : 'olinkirk.land/angelika-paints' // production (olinkirk.land/angelika-paints)
       }
     >
       <div>
