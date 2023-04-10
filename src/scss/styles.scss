@@ -228,12 +228,6 @@ section {
 }
 
 .hero-container {
-  background-image: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.55),
-      rgba(0, 0, 0, 0.75)
-    ),
-    url('../assets/backgrounds/3.webp');
   background-size: cover;
   background-position: center;
   margin-bottom: 2.4rem;
@@ -762,17 +756,17 @@ html.touch *:hover {
       &:hover {
         filter: brightness(0.8);
         position: relative;
-        &::after {
-          font-family: 'Font Awesome 5 Free';
-          content: '\f06e';
+        // &::after {
+        //   font-family: 'Font Awesome 5 Free';
+        //   content: '\f06e';
 
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          font-size: 2rem;
-          color: #fff;
-        }
+        //   position: absolute;
+        //   top: 50%;
+        //   left: 50%;
+        //   transform: translate(-50%, -50%);
+        //   font-size: 2rem;
+        //   color: #fff;
+        // }
       }
 
       img.gallery__image {
